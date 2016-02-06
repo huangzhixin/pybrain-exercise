@@ -24,7 +24,7 @@ print "Number of training patterns: ", len(trndata)  #训练数据的样本数
 print "Input and output dimensions: ", trndata.indim, trndata.outdim    
 print "First sample (input, target, class):"
 print trndata['input'][0], trndata['target'][0], trndata['class'][0]
-fnn = buildNetwork( trndata.indim, 5, trndata.outdim, outclass=SoftmaxLayer )
+fnn = buildNetwork( trndata.indim, 5, trndata.outdim )
 trainer = BackpropTrainer( fnn, dataset=trndata, momentum=0.1, verbose=True, weightdecay=0.01)
 ticks = arange(-3.,6.,0.2)   #建立一个从-3到6，梯度0.2的坐标
 X, Y = meshgrid(ticks, ticks) #建立X和Y矩阵，给每个点附一个值 
